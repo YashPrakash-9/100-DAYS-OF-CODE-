@@ -1,0 +1,31 @@
+// Question 83
+
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string text;
+    getline(cin, text);
+
+    int vowels = 0, consonants = 0;
+
+    for (unsigned char ch : text) {
+        if (isalpha(ch)) {
+            ch = static_cast<unsigned char>(tolower(ch));
+
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                ++vowels;
+            } else {
+                ++consonants;
+            }
+        }
+    }
+
+    cout << "Vowels=" << vowels << ", Consonants=" << consonants;
+    return 0;
+}
+
+// Question 84
+
